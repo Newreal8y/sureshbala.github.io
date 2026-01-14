@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSwipe - Rate Movies Like Never Before</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">CineSwipe</div>
+            <button class="stats-btn" id="statsBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h4l3 9 4-18 3 9h4"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Card Stack -->
+            <div class="card-stack" id="cardStack">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn dislike-btn" id="dislikeBtn" aria-label="Dislike">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <button class="action-btn like-btn" id="likeBtn" aria-label="Like">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Swipe Hints -->
+            <div class="swipe-hint" id="swipeHint">
+                <div class="hint-icon">👆</div>
+                <p>Swipe or use buttons to rate movies</p>
+            </div>
+        </main>
+
+        <!-- Stats Modal -->
+        <div class="modal" id="statsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Your Movie Stats</h2>
+                    <button class="close-btn" id="closeBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="stats-content">
+                    <div class="stat-card">
+                        <div class="stat-number" id="likedCount">0</div>
+                        <div class="stat-label">Liked Movies</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="dislikedCount">0</div>
+                        <div class="stat-label">Passed Movies</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCount">0</div>
+                        <div class="stat-label">Total Rated</div>
+                    </div>
+                </div>
+                <div class="liked-movies">
+                    <h3>Your Liked Movies</h3>
+                    <div class="movie-list" id="likedMoviesList"></div>
+                </div>
+                <button class="reset-btn" id="resetBtn">Reset All Data</button>
+            </div>
+        </div>
+
+        <!-- No More Movies -->
+        <div class="no-movies" id="noMovies" style="display: none;">
+            <div class="no-movies-icon">🎬</div>
+            <h2>That's all for now!</h2>
+            <p>You've rated all available movies</p>
+            <button class="restart-btn" id="restartBtn">Start Over</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
